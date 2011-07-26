@@ -16,6 +16,6 @@ set hlsearch
 set lines=400
 set columns=400
 
-if has("gui_running")
+f has("gui_running")
 	set guioptions=-t
 endif
