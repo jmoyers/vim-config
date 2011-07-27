@@ -38,7 +38,7 @@ set colorcolumn=80
 set number
 
 " Set the status line to something nifty
-set stl=%f\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
+set stl=%f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n\ 0x%B
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
