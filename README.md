@@ -1,3 +1,3 @@
 Just started my vim journey...
 
-![Goooooo](img='http://content.screencast.com/users/J.Moyers/folders/Jing/media/659bf19d-0385-4767-bd23-db1e3a16f318/00000003.png')
+![Goooooo](http://content.screencast.com/users/J.Moyers/folders/Jing/media/659bf19d-0385-4767-bd23-db1e3a16f318/00000003.png)
