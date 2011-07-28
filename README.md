@@ -1,3 +1,3 @@
 Just started my vim journey...
 
-![Goooooo](http://content.screencast.com/users/J.Moyers/folders/Jing/media/659bf19d-0385-4767-bd23-db1e3a16f318/00000003.png)
+![Goooooo](http://content.screencast.com/users/J.Moyers/folders/Jing/media/358ab5ff-4dec-4934-bc63-75e93409055f/00000004.png)
