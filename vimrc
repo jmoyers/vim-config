@@ -13,19 +13,9 @@ set wildmenu
 " Turn on search highlighting
 set hlsearch
 
-" Set some ridiculous sizes for defaults
-" so that it maximizes macvim on launch
-set lines=400
-set columns=400
-
-" Turn off the menu in macvim
-if has("gui_running")
-	set guioptions=-t
-endif
-
-" Map CommandT plugin to Command-d like
-" XCode quick open
-nmap <D-d> :CommandT<CR>
+" Deal with upper/lower better
+set smartcase
+set ignorecase
 
 " Spaces to tabs
 set expandtab
