@@ -1,8 +1,13 @@
 " Enable syntax highlight
 syntax enable
 
-" Markdown support
-au BufRead,BufNewFile *.{md,mkd,markdown}    set filetype=markdown
+" Override default modulo2 bullshit
+au BufRead,BufNewFile *.{md,mkd,markdown} set filetype=markdown
+
+" Our php projects are tabstop 4 for now
+au BufRead,BufNewFile *.php 
+   \ set tabstop=4
+   \ set shiftwidth = 4
 
 " Solarized colorscheme
 set background=dark
