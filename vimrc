@@ -1,21 +1,31 @@
 " Enable syntax highlight
 syntax enable
 
+" Default 3 spaces for a tab 
+set tabstop=3
+set shiftwidth=3
+
+function s:setupMarkdown()
+   set filetype=markdown
+   set tabstop=4
+   set shiftwidth=4
+endfunction
+
 " Override default modulo2 bullshit
-au BufRead,BufNewFile *.{md,mkd,markdown} set filetype=markdown
+" 4 space tabs are imporant in markdown
+au BufRead,BufNewFile *.{md,mkd,markdown} call s:setupMarkdown()
+
+function s:setupPHP()
+   set tabstop=4
+   set shiftwidth=4
+endfunction
 
 " Our php projects are tabstop 4 for now
-au BufRead,BufNewFile *.php 
-   \ set tabstop=4
-   \ set shiftwidth = 4
+au BufRead,BufNewFile *.php call s:setupPHP()
 
 " Solarized colorscheme
 set background=dark
 colorscheme solarized
-
-" Default 3 spaces for a tab 
-set tabstop=3
-set shiftwidth=3
 
 " Turn on autocomplete menu
 set wildmenu
