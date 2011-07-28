@@ -1,5 +1,10 @@
-" Solarized colorscheme
+" Enable syntax highlight
 syntax enable
+
+" Markdown support
+au BufRead,BufNewFile *.{md,mkd,markdown}    set filetype=markdown
+
+" Solarized colorscheme
 set background=dark
 colorscheme solarized
 
