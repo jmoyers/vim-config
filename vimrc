@@ -15,6 +15,8 @@ let g:github='https://github.com/jmoyers'
 let g:snips_company='Sococo'
 let g:company='Sococo'
 
+set rtp+=,~/.vim/snippets'
+
 " Enable syntax highlight
 syntax enable
 
