@@ -2,12 +2,18 @@
 " they were in the normal runtime environment, but you don't have to litter
 " the files from different plugins all over your .vim folder
 filetype off
-set runtimepath+=~/.vim/snippets
-
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
+" Snippets variables
+let g:snips_author='Joshua Moyers'
+let g:author='Joshua Moyers'
+let g:snips_email='jmoyers@gmail.com'
+let g:email='jmoyers@gmail.com'
+let g:github='https://github.com/jmoyers'
+let g:snips_company='Sococo'
+let g:company='Sococo'
 
 " Enable syntax highlight
 syntax enable
@@ -65,3 +71,6 @@ set stl=%f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n\ 0x%B
 
 " tell VIM to always put a status line in, even if there is only one window
 set laststatus=2
+
+" Turn off folds
+set nofoldenable
