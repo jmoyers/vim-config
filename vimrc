@@ -1,3 +1,14 @@
+" Pathogen plugin load, take all bundles in the bundle/ and load them as if
+" they were in the normal runtime environment, but you don't have to litter
+" the files from different plugins all over your .vim folder
+filetype off
+set runtimepath+=~/.vim/snippets
+
+call pathogen#helptags()
+call pathogen#runtime_append_all_bundles()
+filetype plugin indent on
+
+
 " Enable syntax highlight
 syntax enable
 
@@ -15,8 +26,7 @@ function s:setupMarkdown()
    set shiftwidth=4
 endfunction
 
-" Override default modulo2 bullshit
-" 4 space tabs are imporant in markdown
+" Override default modulo2 bullshit 4 space tabs are imporant in markdown
 au BufRead,BufNewFile *.{md,mkd,markdown} call s:setupMarkdown()
 
 function s:setupPHP()
@@ -44,8 +54,7 @@ set ignorecase
 " Spaces to tabs
 set expandtab
 
-" Light 80 column ruler for non-intrusive
-" visual guide for format
+" Light 80 column ruler for non-intrusive visual guide for format
 set colorcolumn=80
 
 " Add line numbers

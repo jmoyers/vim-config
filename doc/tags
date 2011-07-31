@@ -125,8 +125,3 @@ g:CommandTScanDotDirectories	command-t.txt	/*g:CommandTScanDotDirectories*
 g:CommandTSelectNextMap	command-t.txt	/*g:CommandTSelectNextMap*
 g:CommandTSelectPrevMap	command-t.txt	/*g:CommandTSelectPrevMap*
 g:CommandTToggleFocusMap	command-t.txt	/*g:CommandTToggleFocusMap*
-xml-plugin-callbacks	xml-plugin.txt	/*xml-plugin-callbacks*
-xml-plugin-html	xml-plugin.txt	/*xml-plugin-html*
-xml-plugin-mappings	xml-plugin.txt	/*xml-plugin-mappings*
-xml-plugin-settings	xml-plugin.txt	/*xml-plugin-settings*
-xml-plugin.txt	xml-plugin.txt	/*xml-plugin.txt*
