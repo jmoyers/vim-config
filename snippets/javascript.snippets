@@ -3,14 +3,21 @@ snippet proto
 	${1:class}.prototype.${2:method} = function(${3:arg}){
 		${4}
 	}
+snippet ctor
+	function ${1:class}(){
+		${2:super}.call(this, arguments);
+	}
+
+	inherits($1, $2);
+snippet con
+	function ${1:class}(){
+		${2:super}.call(this, arguments);
+	}
+
+	inherits($1, $2);
 # Function
 snippet fun
-	function ${1:name}(${2:arg}){
-		${3}
-	}
-# Anonymous Function
-snippet f
-	function(${1}){
+	function ${1: name}(${2:arg}){
 		${3}
 	}
 # Immediate function
@@ -75,15 +82,30 @@ snippet fun:
 	${1:method}: function(${2:arg}) {
 		${4}
 	}${3:,}
-# setTimeout function
-snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10});
-# Get Elements
-snippet get
-	getElementsBy${1:TagName}('${2}')${3}
+snippet method
+	${1:method}: function(${2:arg}) {
+		${4}
+	}${3:,}
+snippet st
+	setTimeout(function(){
+		${1}
+	}, ${2:10});
+snippet si
+	setInternal(function(){
+		${1}
+	}, ${2:10});
 # Get Element
-snippet gett
-	getElementBy${1:Id}('${2}')${3}
-# console.log (Firebug)
 snippet cl
 	console.log(${1});
+snippet ex
+	module.exports = ${1}
+snippet mod
+	module.exports = ${1}
+snippet m
+	module.exports = ${1}
+snippet r
+	require('${1}')${2}
+snippet req
+	require('${1}')${2}
+snippet v
+	var ${1} = ${2}
