@@ -1,14 +1,9 @@
+" Enable syntax highlight
 syntax enable
 
 " Default 3 spaces for a tab 
 set tabstop=3
 set shiftwidth=3
-
-" fast scroll
-set ttyfast
-
-" Auto indent
-set smartindent
 
 function s:setupMarkdown()
    set filetype=markdown
