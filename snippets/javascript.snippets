@@ -6,18 +6,20 @@ snippet proto
 snippet ctor
 	function ${1:class}(){
 		${2:super}.call(this, arguments);
+		${3}
 	}
 
 	inherits($1, $2);
 snippet con
 	function ${1:class}(){
 		${2:super}.call(this, arguments);
+		${3}
 	}
 
 	inherits($1, $2);
 # Function
 snippet fun
-	function ${1: name}(${2:arg}){
+	function${1: name}(${2:arg}){
 		${3}
 	}
 # Immediate function
@@ -98,11 +100,11 @@ snippet si
 snippet cl
 	console.log(${1});
 snippet ex
-	module.exports = ${1}
+	module.exports${1:.} = ${2}
 snippet mod
-	module.exports = ${1}
+	module.exports${1:.} = ${2}
 snippet m
-	module.exports = ${1}
+	module.exports${1:.} = ${2}
 snippet r
 	require('${1}')${2}
 snippet req
