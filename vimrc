@@ -5,6 +5,10 @@ syntax enable
 set tabstop=3
 set shiftwidth=3
 
+set autoindent
+set smartindent
+set ttyfast
+
 function s:setupMarkdown()
    set filetype=markdown
    set tabstop=4
