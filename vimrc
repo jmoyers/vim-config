@@ -7,10 +7,11 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " Snippets variables
-let g:snips_author='Joshua Moyers <jmoyers@gmail.com>'
-let g:author='Joshua Moyers <jmoyers@gmail.com>'
+let g:snips_author='Joshua Moyers'
+let g:author='Joshua Moyers'
 let g:snips_email='jmoyers@gmail.com'
 let g:email='jmoyers@gmail.com'
+let g:snips_github='https://github.com/jmoyers'
 let g:github='https://github.com/jmoyers'
 
 if strridx(getcwd(), "sococo") > 0
