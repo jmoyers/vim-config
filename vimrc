@@ -7,13 +7,19 @@ call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 " Snippets variables
-let g:snips_author='Joshua Moyers'
-let g:author='Joshua Moyers'
+let g:snips_author='Joshua Moyers <jmoyers@gmail.com>'
+let g:author='Joshua Moyers <jmoyers@gmail.com>'
 let g:snips_email='jmoyers@gmail.com'
 let g:email='jmoyers@gmail.com'
 let g:github='https://github.com/jmoyers'
-let g:snips_company='Sococo'
-let g:company='Sococo'
+
+if strridx(getcwd(), "sococo") > 0
+   let g:snips_company='Sococo'
+   let g:company='Sococo'
+else
+   let g:snips_company=g:snips_author
+   let g:company=g:snips_author
+endif 
 
 set rtp+=,~/.vim/snippets'
 
@@ -27,6 +33,8 @@ set shiftwidth=3
 set autoindent
 set smartindent
 set ttyfast
+
+au BufRead,BufNewFile *.json set ft=javascript
 
 function s:setupMarkdown()
    set filetype=markdown

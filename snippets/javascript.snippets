@@ -1,12 +1,24 @@
-# Prototype
-snippet proto
-	${1:class}.prototype.${2:method} = function(${3:arg}){
+snippet startclass
+	var util = require('util'),
+	inherits = util.inherits;
+
+	function ${1:class}(){
+		${2:super}.call(this${3:, arguments});
 		${4}
 	}
+
+	inherits($1, $2);
+snippet class
+	function ${1:class}(){
+		${2:super}.call(this${3:, arguments});
+		${4}
+	}
+
+	inherits($1, $2);
 snippet ctor
 	function ${1:class}(){
-		${2:super}.call(this, arguments);
-		${3}
+		${2:super}.call(this${3:, arguments});
+		${4}
 	}
 
 	inherits($1, $2);
@@ -17,6 +29,25 @@ snippet con
 	}
 
 	inherits($1, $2);
+snippet doc_class
+	/**
+	 * ${1:class}
+	 *
+	 * @author ${2:`g:snips_author`}
+	 * @copyright `g:snips_company` - `strftime('%B %d, %Y')`
+	 * @package ${3:default}
+	 */${4}
+# Prototype
+snippet proto
+	${1:class}.prototype.${2:method} = function(${3:arg}){
+		${4}
+	}
+snippet doc_method
+	/**
+	 * ${1:method}
+	 *
+	 * @return ${2:void}
+	 */${3}
 # Function
 snippet fun
 	function${1: name}(${2:arg}){
@@ -81,11 +112,11 @@ snippet do
 	} while (${1});
 # Object Method
 snippet fun:
-	${1:method}: function(${2:arg}) {
+	${1:method}: function(${2:arg}){
 		${4}
 	}${3:,}
 snippet method
-	${1:method}: function(${2:arg}) {
+	${1:method}: function(${2:arg}){
 		${4}
 	}${3:,}
 snippet st
@@ -96,9 +127,9 @@ snippet si
 	setInternal(function(){
 		${1}
 	}, ${2:10});
-# Get Element
 snippet cl
 	console.log(${1});
+" Node specific
 snippet ex
 	module.exports${1:.} = ${2}
 snippet mod
@@ -111,3 +142,17 @@ snippet req
 	require('${1}')${2}
 snippet v
 	var ${1} = ${2}
+" nodeuint tests
+snippet test 
+	module.exports${1:.name} = function(test){
+		${2}
+		test.done();
+	}
+snippet testgroup
+	module.exports${1:.name} = testCase({
+		setUp:function(cb){
+			${2}
+		},
+		tearDown:function(cb){
+		}
+	})
