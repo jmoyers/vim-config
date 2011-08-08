@@ -72,7 +72,9 @@ set ignorecase
 set expandtab
 
 " Light 80 column ruler for non-intrusive visual guide for format
-set colorcolumn=80
+if exists('+colorcolumn')
+   set colorcolumn=80
+endif
 
 " Add line numbers
 set number
