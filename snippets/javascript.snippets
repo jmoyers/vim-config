@@ -128,7 +128,7 @@ snippet si
 		${1}
 	}, ${2:10});
 snippet cl
-	console.log(${1});
+	console.log(${1});${2}
 " Node specific
 snippet ex
 	module.exports${1:.} = ${2}
@@ -156,3 +156,11 @@ snippet testgroup
 		tearDown:function(cb){
 		}
 	})
+snippet type
+	typeof ${1} === '${2:undefined}'${3}
+snippet typeof
+	typeof ${1} === '${2:undefined}'${3}
+snippet iftype
+	if (typeof ${1} === '${2:undefined}'${3}) {
+		${4}
+	}

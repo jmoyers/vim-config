@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jmoyers/Development/web/sococo-website'
-let g:netrw_dirhist_2='/Users/jmoyers/.vim'
-let g:netrw_dirhist_3='/Users/jmoyers/Development/projects/newco/node_modules/jessie'
-let g:netrw_dirhist_4='/Users/jmoyers/.vim/snippets'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/jmoyers/Development/projects/playlist'
+let g:netrw_dirhist_2='/Users/jmoyers/test'
+let g:netrw_dirhist_3='/Users/jmoyers/Development/projects/sococo/product/.git'
+let g:netrw_dirhist_4='/Users/jmoyers/Development/projects/sococo/log-analysis/.git'
+let g:netrw_dirhist_5='/Users/jmoyers/Development/projects/sococo/log-analysis'
+let g:netrw_dirhist_6='/Users/jmoyers/test/test'
