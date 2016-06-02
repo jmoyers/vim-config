@@ -33,45 +33,47 @@ set ttyfast
 
 " Spaces to tabs
 set expandtab
+set tabstop=2
+set shiftwidth=2
 
 au BufRead,BufNewFile *.json set ft=javascript
 
 function s:setupMarkdown()
    set filetype=markdown
-   set tabstop=4
-   set shiftwidth=4
+   set tabstop=2
+   set shiftwidth=2
 endfunction
 
 " Override default modulo2 bullshit 4 space tabs are imporant in markdown
 au BufRead,BufNewFile *.{md,mkd,markdown} call s:setupMarkdown()
 
 function s:setupPHP()
-   set tabstop=4
-   set shiftwidth=4
+   set tabstop=2
+   set shiftwidth=2
 endfunction
 
 " Our php projects are tabstop 4 for now
 au BufRead,BufNewFile *.php call s:setupPHP()
 
 function s:setupJS()
-   set tabstop=4
-   set shiftwidth=4
+   set tabstop=2
+   set shiftwidth=2
 endfunction
 
 " Our php projects are tabstop 4 for now
 au BufRead,BufNewFile *.js call s:setupJS()
 
 function s:setupObjC()
-   set tabstop=4
-   set shiftwidth=4
+   set tabstop=2
+   set shiftwidth=2
    set noexpandtab
 endfunction
 
 au FileType objc call s:setupObjC()
 
 " Solarized colorscheme
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 
 " Turn on autocomplete menu
 set wildmenu
