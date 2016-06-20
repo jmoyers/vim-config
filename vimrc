@@ -1,10 +1,19 @@
-" Pathogen plugin load, take all bundles in the bundle/ and load them as if
-" they were in the normal runtime environment, but you don't have to litter
-" the files from different plugins all over your .vim folder
-filetype off
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
-filetype plugin indent on
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" new version of vim is dumb and wont delete over line breaks
+set backspace=2
 
 " Snippets variables
 let g:snips_author='Joshua Moyers'
@@ -13,14 +22,6 @@ let g:snips_email='jmoyers@gmail.com'
 let g:email='jmoyers@gmail.com'
 let g:snips_github='https://github.com/jmoyers'
 let g:github='https://github.com/jmoyers'
-
-if strridx(getcwd(), "sococo") > 0
-   let g:snips_company='Sococo'
-   let g:company='Sococo'
-else
-   let g:snips_company=g:snips_author
-   let g:company=g:snips_author
-endif 
 
 set rtp+=,~/.vim/snippets'
 
@@ -35,48 +36,6 @@ set ttyfast
 set expandtab
 set tabstop=2
 set shiftwidth=2
-
-au BufRead,BufNewFile *.json set ft=javascript
-
-function s:setupMarkdown()
-   set filetype=markdown
-   set tabstop=2
-   set shiftwidth=2
-endfunction
-
-" Override default modulo2 bullshit 4 space tabs are imporant in markdown
-au BufRead,BufNewFile *.{md,mkd,markdown} call s:setupMarkdown()
-
-function s:setupPHP()
-   set tabstop=2
-   set shiftwidth=2
-endfunction
-
-" Our php projects are tabstop 4 for now
-au BufRead,BufNewFile *.php call s:setupPHP()
-
-function s:setupJS()
-   set tabstop=2
-   set shiftwidth=2
-endfunction
-
-" Our php projects are tabstop 4 for now
-au BufRead,BufNewFile *.js call s:setupJS()
-
-function s:setupObjC()
-   set tabstop=2
-   set shiftwidth=2
-   set noexpandtab
-endfunction
-
-au FileType objc call s:setupObjC()
-
-" Solarized colorscheme
-" set background=dark
-" colorscheme solarized
-
-" Turn on autocomplete menu
-set wildmenu
 
 " Turn on search highlighting
 set hlsearch
@@ -98,6 +57,3 @@ set stl=%f\ Line:%l/%L\ (%p%%)\ Col:%v\ Buf:#%n\ 0x%B
 
 " always show a status line
 set laststatus=2
-
-" Turn off folds
-set nofoldenable
