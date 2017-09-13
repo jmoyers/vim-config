@@ -1,6 +1,21 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible      " be iMproved, required
 set encoding=utf-8
+set clipboard=unnamed " Allow yank to go to system clipboard
+
+" Allows you to :e file automplete in subdirectories
+set path+=**
+set wildmenu
+
+" For some reason, the vertical bar cursor stopped working by default in
+" insert mode, and I found this which also apparently applies some fixes to
+" tmux, which I use
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,8 +25,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'derekwyatt/vim-fswitch'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'swift.vim'
+Plugin 'vim-surround'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -19,16 +35,6 @@ filetype plugin indent on    " required
 
 " new version of vim is dumb and wont delete over line breaks
 set backspace=2
-
-" Snippets variables
-let g:snips_author='Joshua Moyers'
-let g:author='Joshua Moyers'
-let g:snips_email='jmoyers@gmail.com'
-let g:email='jmoyers@gmail.com'
-let g:snips_github='https://github.com/jmoyers'
-let g:github='https://github.com/jmoyers'
-
-set rtp+=,~/.vim/snippets'
 
 " Enable syntax highlight
 syntax enable
