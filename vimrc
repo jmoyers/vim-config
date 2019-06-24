@@ -1,10 +1,13 @@
 set nocompatible      " be iMproved, required
 set encoding=utf-8
-set clipboard=unnamed " Allow yank to go to system clipboard
+set clipboard=unnamed
 
 " Allows you to :e file automplete in subdirectories
 set path+=**
 set wildmenu
+
+" Execute line under cursor in bash
+nmap <F6> :exec '!'.getline('.')
 
 " For some reason, the vertical bar cursor stopped working by default in
 " insert mode, and I found this which also apparently applies some fixes to
@@ -17,21 +20,30 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+filetype plugin indent on
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'swift.vim'
-Plugin 'vim-surround'
+call plug#begin()
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'othree/yajs'
+Plug 'mxw/vim-jsx'
+Plug 'hashivim/vim-terraform'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
+call plug#end()
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+colorscheme onehalfdark
+
+" vodoo for true color, along with .tmux.conf settings
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+let g:prettier#autoformat = 0
+au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+au BufRead,BufNewFile *.js setlocal syntax=javascript.jsx
+au BufRead,BufNewFile *.yaml,*.yml set filetype=yaml.ansible
 
 " new version of vim is dumb and wont delete over line breaks
 set backspace=2
