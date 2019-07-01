@@ -31,6 +31,7 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py' }
+Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 colorscheme onehalfdark
@@ -41,9 +42,12 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:prettier#autoformat = 0
-au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+au BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml Prettier
 au BufRead,BufNewFile *.js setlocal syntax=javascript.jsx
 au BufRead,BufNewFile *.yaml,*.yml set filetype=yaml.ansible
+
+" automatically wrap in markdown
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " new version of vim is dumb and wont delete over line breaks
 set backspace=2
